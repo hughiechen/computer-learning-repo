@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./img-upload.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" id="file" multiple onchange="preview()">
+    <div id="container">
+
+    </div>
+    <script>
+
+
+        function preview(){
+            var config = {
+                tip: "请上传格式为png, gif或者jpg的图片",
+                fileId: "file",
+                containerId: "container",
+                imgStyle: "width:320px;height:auto;border-radius:64%;"
+            }
+            var previewer = new ImgPrevirewer(config);
+            previewer.preview();
+        }
+    </script>
+</body>
+</html>
