@@ -9,18 +9,16 @@
 <script src="./card.js" type="text/javascript"></script>
 <style type="text/css">
 em.success{
-background:url("images/tips_arrow.gif") no-repeat left 0px;
 padding-left:16px;
 margin-left:2px;
 }
 em.error{
-background:url("images/tips_arrow.gif") no-repeat left -51px;
 display:inline;
 padding-left:10px;
 font-style:normal;
 font-size:11px;
 margin-left:2px;
-font-family:12px/162% Arial, Helvetica, sans-serif;
+font-family: Arial, Helvetica, sans-serif;
  
 }
 </style>
@@ -120,64 +118,64 @@ font-family:12px/162% Arial, Helvetica, sans-serif;
         $('#commentForm').validate({
         
         rules: {
-        username: {
-        required:true,
-        stringCheck:true,
-        byteRangeLength:[3,15]
-        },
-        email:{
-        required:true,
-        email:true
-        },
-        phone:{
-        required:true,
-        isMobile:true
-        },
-        address:{
-        required:true,
-        stringCheck:true,
-        byteRangeLength:[3,100]
-        },
-        card:{
-        required:true,
-        isIdCardNo:true
-        
-        },
-        passport:{
-        required:true,
-        passport:true
-        
-        }
+            username: {
+                required:true,
+                stringCheck:true,
+                byteRangeLength:[3,15]
+            },
+            email:{
+                required:true,
+                email:true
+            },
+            phone:{
+                required:true,
+                isMobile:true
+            },
+            address:{
+                required:true,
+                stringCheck:true,
+                byteRangeLength:[3,100]
+            },
+            card:{
+                required:true,
+                isIdCardNo:true
+            
+            },
+            passport:{
+                required:true,
+                passport:true
+            
+            }
         },
         
         
         messages:{
-        username: {
-        required: "请填写用户名",
-        stringCheck: "用户名只能包括中文字、英文字母、数字和下划线",
-        byteRangeLength: "用户名必须在3-15个字符之间(一个中文字算2个字符)"
-        },
-        email:{
-        required: "<font color=red>请输入一个Email地址</fond>",
-        email: "请输入一个有效的Email地址"
-        },
-        phone:{
-        required: "请输入您的联系电话",
-        isPhone: "请输入一个有效的联系电话"
-        },
-        address:{
-        required: "请输入您的联系地址",
-        stringCheck: "请正确输入您的联系地址",
-        byteRangeLength: "请详实您的联系地址以便于我们联系您"
-        },
-        card:{
-        required:"请输入身份证号",
-        isIdCardNo:"请输入正确的身份证号"
-        },
-        passport:{
-        required:"请输入护照编号",
-        passport:"请输入正确的护照编号"
-        }
+            username: {
+                required: "请填写用户名",
+                stringCheck: "用户名只能包括中文字、英文字母、数字和下划线",
+                byteRangeLength: "用户名必须在3-15个字符之间(一个中文字算2个字符)"
+            },
+            email:{
+                required: "<font color=red>请输入一个Email地址</fond>",
+                email: "请输入一个有效的Email地址"
+            },
+            phone:{
+                required: "请输入您的联系电话",
+                isPhone: "请输入一个有效的联系电话"
+            },
+            address:{
+                required: "请输入您的联系地址",
+                stringCheck: "请正确输入您的联系地址",
+                byteRangeLength: "请详实您的联系地址以便于我们联系您"
+            },
+            card:{
+                required:"请输入身份证号",
+                isIdCardNo:"请输入正确的身份证号"
+            },
+            passport:{
+                required:"请输入护照编号",
+                passport:"请输入正确的护照编号"
+            }
         },
 
         focusInvalid: false,

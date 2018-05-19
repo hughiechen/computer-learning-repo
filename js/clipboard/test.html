@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../jquery.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input id="foo" value="https://github.com/zenorocha/clipboard.js.git">
+    <button class="btn" id="test"   data-clipboard-action="copy" data-clipboard-target="#foo">
+        Copy to clipboard
+    </button>   
+<script>
+    $(function (params) {
+        ClipboardJS.isSupported();
+        var clipboard = new ClipboardJS('.btn');
+        clipboard.on('success', function(e) {
+            console.info('Action:', e.action);
+            console.info('Text:', e.text);
+            console.info('Trigger:', e.trigger);
+
+            e.clearSelection();
+        });
+        clipboard.on('error', function(e) {
+            console.error('Action:', e.action);
+            console.error('Trigger:', e.trigger);
+        });
+    })
+
+</script>
+</body>
+</html>

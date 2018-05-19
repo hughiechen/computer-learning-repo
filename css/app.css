@@ -15,12 +15,18 @@ html,body{
     width:100%;
     overflow: hidden;
 }
+/* 清除默认input样式 */
 input,select,button{ 
      font-size:100%;
      outline:0;
      vertical-align:middle;
      -webkit-appearance: none;
  }
+ input:-webkit-autofill {  
+	-webkit-box-shadow: 0 0 0px 1000px transparent inset;  
+ 	-webkit-text-fill-color: #333;  
+}  
+
 button{
     border: 0;
     background-clip: padding-box;
@@ -169,6 +175,9 @@ i,em{font-style: normal;}
   align-items: center;
   -webkit-align-items: center;
 }
+.align-self{
+  
+}
 /* 垂直 居中 */
 .flex-ver {
   align-items: center;
@@ -190,7 +199,14 @@ i,em{font-style: normal;}
   justify-content: space-between;
   -webkit-justify-content: space-between;
 }
-
+.align-self{
+  align-self: center;
+  -webkit-align-self:center;
+}
+.flex-around{
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+}
 /* list-pages */
 .sn_pages{}
 .sn_pages,.sn_pages a{font-family:Verdana, Helvetica, sans-serif,"Microsoft Yahei","SimSun";
