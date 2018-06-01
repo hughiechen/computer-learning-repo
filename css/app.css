@@ -44,10 +44,11 @@ img{
 a, a:link, a:visited{
      color:#000;
      text-decoration:none;
+
 }
 a:hover{ 
     color:#000; 
-    text-decoration:underline;
+    text-decoration:none;
 }
 /* 标签属性，textarea,input 强制输入时内容超出时换行，打断 */
 textarea,input{ 
@@ -176,7 +177,8 @@ i,em{font-style: normal;}
   -webkit-align-items: center;
 }
 .align-self{
-  
+  align-self: center;
+  -webkit-align-self:center;
 }
 /* 垂直 居中 */
 .flex-ver {
@@ -193,7 +195,10 @@ i,em{font-style: normal;}
   align-items: flex-end;
   -webkit-align-items: flex-end;
 }
-
+.flex-start{
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+}
 /* flex 容器（设置为flex）内子元素向两边顶齐平分 */
 .flex-jcsb {
   justify-content: space-between;

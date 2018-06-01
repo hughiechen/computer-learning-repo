@@ -1,0 +1,938 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<title>五月积累</title>
+</head>
+<body>
+<h1 align="center" class="root">
+<a name="46oart44gnuj98goss8eqt02vo">五月积累</a>
+</h1>
+<div align="center" class="globalOverview">
+<img src="%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF_files/images/%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF.jpg"></div>
+<h2 class="topic">
+<a name="4b8eh9kk4p4f63b5vvaot1sg8m">1.fastclick用法</a>
+</h2>
+<h3 class="topic">
+<a name="2scd3he1no5fneata1kqk3s2fr">&nbsp;1.将fastclick.js引入到html中</a>
+</h3>
+<h3 class="topic">
+<a name="7a43add8bcc0td0vpd5v986i23">&nbsp;2.在body前边，也就是body加载之前，实例化一个fastclick.</a>
+</h3>
+<h3 class="topic">
+<a name="1qnavjtbhth03vnngh13dtjdo5">&nbsp;&nbsp;js方法：</a>
+</h3>
+<h3 class="topic">
+<a name="3b449ov2p93npdr3906g696ab0">&nbsp;&nbsp;&nbsp;if('addEventListener' in document) {&#13;
+&#13;
+document.addEventListener('DOMContentLoaded',function()&nbsp;{&#13;
+&#13;
+FastClick.attach(document.body);&#13;
+&#13;
+},false);&#13;
+&#13;
+}</a>
+</h3>
+<h3 class="topic">
+<a name="7n7l29eoa8v7u49h39lfjpobnl">&nbsp;&nbsp;jquery方法：</a>
+</h3>
+<h3 class="topic">
+<a name="1pfqmuikcpli2njjglghu74cfu">&nbsp;&nbsp;&nbsp;$(function() {&#13;
+&#13;
+FastClick.attach(document.body);&#13;
+&#13;
+});</a>
+</h3>
+<h3 class="topic">
+<a name="1efkn09rdeg6na5ci2rjt5v79h">&nbsp;在移动浏览器上发生介于轻敲及点击之间的指令时，能够减少300毫秒的延迟</a>
+</h3>
+<h2 class="topic">
+<a name="3vo053lq9eniq6ei2che4env86">2.移动端点击失效</a>
+</h2>
+<h3 class="topic">
+<a name="7g7ke6iv892it8s305tvmn0log">&nbsp;将目标元素换成 a标签 或者 button 等可点击的元素</a>
+</h3>
+<h3 class="topic">
+<a name="2b5aajo17a7ecgv9i9af7a26v5">&nbsp; 将 click 事件委托到非 document 或 body 的父级元素上</a>
+</h3>
+<h3 class="topic">
+<a name="20kmocfrm6chnnfli4oktnbl85">&nbsp; 给目标元素加一条样式规则 cursor: pointer;</a>
+</h3>
+<h3 class="topic">
+<a name="1lpce441qunt4qdmf25popenhf">&nbsp;点击事件改为touch事件</a>
+</h3>
+<h3 class="topic">
+<a name="7tc090lfn2u0gsbgcqt087r636">&nbsp;给标签添加事件onclick="fun()"</a>
+</h3>
+<h2 class="topic">
+<a name="60rpgft8pqpgb1t2lsirqsk6bf">3.select/option浏览器样式改变</a>
+</h2>
+<h3 class="topic">
+<a name="3dfemaqb3bc42mfi22eumon1f4">&nbsp;option::-ms-expand{ display: none; }&#13;
+option{&#13;
+    -moz-appearance:none; /* Firefox */&#13;
+    -webkit-appearance:none; /* Safari 和 Chrome */&#13;
+    appearance:none;&#13;
+}&#13;
+/* --背景色字体颜色--*/&#13;
+option:hover{&#13;
+    color:#fff;&#13;
+    background-color:#1E90FF;&#13;
+}</a>
+</h3>
+<h3 class="topic">
+<a name="07709i94542c6dcnn4tjihh61q">&nbsp;select::-ms-expand{ display: none; }&#13;
+/* --火狐、谷歌清除--*/&#13;
+select{&#13;
+     appearance:none;  &#13;
+    -moz-appearance:none;  &#13;
+    -webkit-appearance:none;&#13;
+     background: url("arrow.png") no-repeat scroll right center transparent;&#13;
+     padding-right: 14px;&#13;
+}</a>
+</h3>
+<h2 class="topic">
+<a name="0mbjrschovf2dshodhkfk21482">4.jquery.validate用法</a>
+</h2>
+<h3 class="topic">
+<a name="6dingj5vgep9eetjud92jrk8lp">&nbsp;引入</a>
+</h3>
+<h3 class="topic">
+<a name="2166dmmlnlgjggj6bmstk3jh91">&nbsp;&nbsp;&lt;script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"&gt;&lt;/script&gt;&#13;
+&lt;script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"&gt;&lt;/script&gt;</a>
+</h3>
+<h3 class="topic">
+<a name="3fr8ui3jm8j2f4tgb58b26boko">&nbsp;&nbsp;中文提示库</a>
+</h3>
+<h3 class="topic">
+<a name="20c8t360rtdle1e8scvl2m0uv2">&nbsp;&nbsp;&nbsp; &lt;script type="text/javascript" src="http://res.cuiqingcai.com/js/jquery.validate.messages_cn.js"&gt;&lt;/script&gt;</a>
+</h3>
+<h3 class="topic">
+<a name="4bceptfdmingfsnk7r8fv3ksqv">&nbsp;本地验证</a>
+</h3>
+<h3 class="topic">
+<a name="4berd1bcq0tkf9e0oq0e8vigtn">&nbsp;&nbsp;$("#frmV").validate(&#13;
+              {&#13;
+                  /*自定义验证规则*/&#13;
+                  rules: {&#13;
+                      username: { required: true, minlength: 6 },&#13;
+                      email: { required: true, email: true }&#13;
+                  },&#13;
+                  /*错误提示位置*/&#13;
+                  errorPlacement: function(error, element) {&#13;
+                      error.appendTo(element.siblings("span"));&#13;
+                  },&#13;
+                  messages: {&#13;
+                      username: { required: "请输入姓名", minlength: "长度不可小于6" },&#13;
+                      email: { required: "请输入电子邮件", email: "请输入正确格式" }&#13;
+                  },&#13;
+                  success: function(label) {&#13;
+                      label.html("OK");&#13;
+                  }&#13;
+              }&#13;
+            );&#13;
+        })</a>
+</h3>
+<h3 class="topic">
+<a name="5bbkcu9a14ggqmte62j2tqmvf7">&nbsp;异步验证</a>
+</h3>
+<h3 class="topic">
+<a name="2nvfqpk8jql6m80t9jq296vrqn">&nbsp;&nbsp;  $("#frmV").validate(&#13;
+                {&#13;
+                    /*自定义验证规则*/&#13;
+                    rules: { &#13;
+                        username: { required: true, minlength: 6 },&#13;
+                        phone: { &#13;
+                            required: true, &#13;
+                            remote:{&#13;
+                                url: "check_phone.php",     //后台处理程序&#13;
+                                type: "post",               //数据发送方式&#13;
+                                dataType: "json",           //接受数据格式   &#13;
+                                data: {                     //要传递的数据&#13;
+                                    phone: function() {&#13;
+                                        return $("#phone").val();&#13;
+                                    }&#13;
+                                }&#13;
+                            }&#13;
+                        }&#13;
+                    },&#13;
+                    /*错误提示位置*/&#13;
+                    errorPlacement: function(error, element) {&#13;
+                      error.appendTo(element.siblings("span"));&#13;
+                    },&#13;
+                    messages: {&#13;
+                      username: { required: "请输入姓名", minlength: "长度不可小于6" },&#13;
+                      phone: { required: "请输入电话", remote: "请输入正确格式" }&#13;
+                    },&#13;
+                    success: function(label) {&#13;
+                      label.html("OK");&#13;
+                    }&#13;
+                }&#13;
+            );</a>
+</h3>
+<h3 class="topic">
+<a name="0e8c3t8ia12gnht9dlpa2upvvf">&nbsp;自定义验证方法</a>
+</h3>
+<h3 class="topic">
+<a name="6d94725bami41vgkes8rmsn1ij">&nbsp;&nbsp;addMethod(name,method,message)</a>
+</h3>
+<h3 class="topic">
+<a name="362f3qo1de26q24abspmr9c36b">&nbsp;&nbsp;&nbsp;参数name 是添加的方法的名字&#13;
+&#13;
+参数method是一个函数,接收三个参数(value,element,param) value 是元素的值,element是元素本身&#13;
+&#13;
+param是参数,我们可以用addMethod 来添加除built-in Validation methods 之外的验证方法</a>
+</h3>
+<h3 class="topic">
+<a name="7fpjvh44bmgc8ldv3brun704u3">&nbsp;&nbsp;&nbsp;手机号码验证</a>
+</h3>
+<h3 class="topic">
+<a name="0r8fqrjn77kp6hujmmgstsc0jl">&nbsp;&nbsp;&nbsp;&nbsp;$.validator.addMethod("phone",function(value,element,params){&#13;
+         if((value.length != 11) || (!value.match(/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|17[0|6|7|8]|18[0-9])\d{8}$/))){&#13;
+            return false;&#13;
+         }else{&#13;
+            return true;&#13;
+        }&#13;
+    },"请输入正确的手机号");</a>
+</h3>
+<h3 class="topic">
+<a name="7kuibneq7l6jfqu1e9f2g5alub">&nbsp;&nbsp;&nbsp;&nbsp;rules:{&#13;
+            phone:{&#13;
+                required:true,phone:true&#13;
+            },&#13;
+        },</a>
+</h3>
+<h3 class="topic">
+<a name="673k1md2dudt1v02vcn1vght4f">&nbsp;验证通过提交</a>
+</h3>
+<h3 class="topic">
+<a name="15mktatitmhoqd8aturps6utdk">&nbsp;&nbsp;$("#signupForm").validate({&#13;
+        submitHandler:function(form){&#13;
+            alert("提交事件!");   &#13;
+            form.submit();&#13;
+        }    &#13;
+    });</a>
+</h3>
+<h3 class="topic">
+<a name="3e2kq4h2ingrjpdgcqoqfmej27">&nbsp;正则</a>
+</h3>
+<h3 class="topic">
+<a name="2u2bb3030oeb077gp8s3qkqq6m">&nbsp;&nbsp;大陆身份证</a>
+</h3>
+<h3 class="topic">
+<a name="4jpad4ktucd148i03h0fhqo29d">&nbsp;&nbsp;&nbsp;var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;</a>
+</h3>
+<h3 class="topic">
+<a name="79fn3s63npst9frficpi7uh0sp">&nbsp;&nbsp;香港身份证</a>
+</h3>
+<h3 class="topic">
+<a name="63s4bbgatg6oserg8hvqvoleld">&nbsp;&nbsp;&nbsp;var reg = /[A-Z]{1,2}[0-9]{6}([0-9A])/;</a>
+</h3>
+<h3 class="topic">
+<a name="1vlam70oll9dos95qh8meh8pdb">&nbsp;&nbsp;澳门身份证</a>
+</h3>
+<h3 class="topic">
+<a name="5au8ds9phea0fstu8eiqvag5o9">&nbsp;&nbsp;&nbsp;var reg = /^[1|5|7][0-9]{6}\([0-9Aa]\)/;</a>
+</h3>
+<h3 class="topic">
+<a name="1m763reas9a620s49helgd37cj">&nbsp;&nbsp;台湾</a>
+</h3>
+<h3 class="topic">
+<a name="7as4bvvjbgndj4vd1503puch04">&nbsp;&nbsp;&nbsp;var reg = /[A-Z][0-9]{9}/;</a>
+</h3>
+<h3 class="topic">
+<a name="76k5k4fm9m43675os6td9ftjec">&nbsp;&nbsp;护照</a>
+</h3>
+<h3 class="topic">
+<a name="5n7moqe8fd7ibhggav2babi6k9">&nbsp;&nbsp;&nbsp;var reg = /^1[45][0-9]{7}|([P|p|S|s]\d{7})|([S|s|G|g]\d{8})|([Gg|Tt|Ss|Ll|Qq|Dd|Aa|Ff]\d{8})|([H|h|M|m]\d{8，10})$/;</a>
+</h3>
+<h3 class="topic">
+<a name="2h4aqajdi9po8rt1p0c7a7s6va">&nbsp;&nbsp;军官证</a>
+</h3>
+<h3 class="topic">
+<a name="6bgbo0fiof3eg8i5iheiruiqqu">&nbsp;&nbsp;&nbsp;var reg = /[\u4e00-\u9fa5](字第){1}(\d{4,8})(号?)$/;</a>
+</h3>
+<h2 class="topic">
+<a name="4j154q41r5u3vvno45qinld6qp">5.git 使用总结</a>
+</h2>
+<h3 class="topic">
+<a name="2lp60gol0f6a4tbar90nri6moa">&nbsp;1.git 初始化</a>
+</h3>
+<h3 class="topic">
+<a name="5nepnfglg01oe342aan8na0hfp">&nbsp;&nbsp;1.配置SSH</a>
+</h3>
+<h3 class="topic">
+<a name="2m0dhu6rdkpdg3niqo1qufpv49">&nbsp;&nbsp;&nbsp;1.打开你的git ，输入ssh</a>
+</h3>
+<h3 class="topic">
+<a name="20uoossv7a8cp4o30jumvi9n9r">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+</h3>
+<p class="topicImage">
+<img src="%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF_files/1547nu09npcv5961h24f2jmkju.png"></p>
+<h3 class="topic">
+<a name="78ukov99jkoa1j84kjcjmjejis">&nbsp;&nbsp;&nbsp;2.接着输入 ssh-keygen -t rsa （主要是生成你跟github联系的秘钥key）</a>
+</h3>
+<h3 class="topic">
+<a name="1tl8tpn2akjaej9725qnqmb587">&nbsp;&nbsp;&nbsp;&nbsp;连续三个回车，key就生成了。就在红色箭头所指文件夹</a>
+</h3>
+<h3 class="topic">
+<a name="2d6gggrtcp6dpt83g0210ird09">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+</h3>
+<p class="topicImage">
+<img src="%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF_files/2dqquckrhbcerfh5tvvuo2o158.png"></p>
+<h3 class="topic">
+<a name="15aj3ami4m24heb4d70hk8uu4p">&nbsp;&nbsp;&nbsp;3.GitHub 上添加 SSH key</a>
+</h3>
+<h3 class="topic">
+<a name="1hbpoc94jhal47fh7nsgcccca5">&nbsp;&nbsp;&nbsp;&nbsp;1.打开上面打印出文件夹所在位置，用文本编辑器打开 id_ras.pub文件&#13;
+把 id_ras.pub 公钥公布给github</a>
+</h3>
+<h3 class="topic">
+<a name="7ivb9tqasskkhkf4l7ss1hiji9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+</h3>
+<p class="topicImage">
+<img src="%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF_files/25no0q1ci06epada2me138jg0c.png"></p>
+<h3 class="topic">
+<a name="077koegnvb5ufghp455761qr8d">&nbsp;&nbsp;&nbsp;&nbsp;2.在github上settings里面的SSH and GPG keys</a>
+</h3>
+<h3 class="topic">
+<a name="67vo40bdju8tl7rqsi019q3h3c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+</h3>
+<p class="topicImage">
+<img src="%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF_files/2q9d513vdejl5tbukbjggrltqk.png"></p>
+<h3 class="topic">
+<a name="3pe89oedlenm99btjtpuh4f5k1">&nbsp;&nbsp;&nbsp;&nbsp;3.然后New SSH，Title位置不需要填，粘贴，Add SSH key</a>
+</h3>
+<h3 class="topic">
+<a name="12v94rmvbngtm5uj3ei96hgkh0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+</h3>
+<p class="topicImage">
+<img src="%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF_files/38eh5dskmd8f19plne2637uh3g.png"></p>
+<h3 class="topic">
+<a name="2vcpucrh5og35e7ef6sp24dmri">&nbsp;&nbsp;&nbsp;&nbsp;4.测试连接 ssh -T git@github.com，在第一次测试时会弹出警告，需要填写yes，然后回车</a>
+</h3>
+<h3 class="topic">
+<a name="4d2485ql64acd6mhkt4d4tbj33">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+</h3>
+<p class="topicImage">
+<img src="%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF_files/1hrur8o22d3cc6eb6s3ccs1cdk.png"></p>
+<h3 class="topic">
+<a name="43q1c51e3v3138apqjj05p735c">&nbsp;&nbsp;2.把我们本地仓库提交到github</a>
+</h3>
+<h3 class="topic">
+<a name="7li1hb5ngapencv3dkdu6v6gf7">&nbsp;&nbsp;&nbsp;方式一：先把仓库clone下来，然后在里面添加文件修改后在上传。</a>
+</h3>
+<h3 class="topic">
+<a name="5pqcjjdv1ealkssvl8fqtv73sr">&nbsp;&nbsp;&nbsp;&nbsp;1.复制地址</a>
+</h3>
+<h3 class="topic">
+<a name="36s6pcos3b07ksnr2gb7suughu">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+</h3>
+<p class="topicImage">
+<img src="%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF_files/093h9fklbr2nb73h7fir3nhct8.png"></p>
+<h3 class="topic">
+<a name="6ukea442h0201vd094of1b5b8v">&nbsp;&nbsp;&nbsp;&nbsp;2.右键打开git</a>
+</h3>
+<h3 class="topic">
+<a name="4dg1988j1jscp3876e3g81ghf5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;输入命令：git clone //git地址</a>
+</h3>
+<h3 class="topic">
+<a name="3518rfag0slj5ldslhivhsdd5h">&nbsp;&nbsp;&nbsp;&nbsp;3.下载完成后，打开仓库文件夹，再打开git</a>
+</h3>
+<h3 class="topic">
+<a name="1hdd9gl0el7u76132874fhs5f3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;然后把我们添加的text.md文件提交到本地仓库</a>
+</h3>
+<h3 class="topic">
+<a name="6m20ccgclr640mqv78mqica6oe">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git add . </a>
+</h3>
+<h3 class="topic">
+<a name="0r8nds2ccn70labhnq0f5upf66">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+</h3>
+<p class="topicImage">
+<img src="%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF_files/1cfgmot2vq767npeloi897jhqh.png"></p>
+<h3 class="topic">
+<a name="56952r5r74bqtqc0gpd98o637q">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git commit -m "xxx"</a>
+</h3>
+<h3 class="topic">
+<a name="28udbleqdslhrn8vr37kacrggg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;把本地仓库推送到远程仓库 ：git push origin master</a>
+</h3>
+<h3 class="topic">
+<a name="2ooi4ec37l3nol5m1ep8ik9q34">&nbsp;&nbsp;3.本地仓库关联远程仓库（本地仓库与远程仓库没有冲突情况下）</a>
+</h3>
+<h3 class="topic">
+<a name="3i2t78ng0un9i00o74pkk9nekp">&nbsp;&nbsp;&nbsp;1.新建文件夹，然后git init 初始化仓库</a>
+</h3>
+<h3 class="topic">
+<a name="310r4n9tt70kg5uudpkmvau1sb">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+</h3>
+<p class="topicImage">
+<img src="%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF_files/36p6lip1j39oh3kknmos51qul2.png"></p>
+<h3 class="topic">
+<a name="1jhdm5la72nru623sf42vj20n5">&nbsp;&nbsp;&nbsp;2.输入关联命令：git remote add origin git@github.com:LiKaiRabbit/text.git</a>
+</h3>
+<h3 class="topic">
+<a name="4h7udd0qgviq41igslmqp7mfsc">&nbsp;&nbsp;&nbsp;&nbsp;origin是你给这个远程仓库起的名字</a>
+</h3>
+<h3 class="topic">
+<a name="61pgio65ck0510a61rbft1dro6">&nbsp;&nbsp;&nbsp;&nbsp;git@github.com:LiKaiRabbit/text.git 仓库的地址</a>
+</h3>
+<h3 class="topic">
+<a name="4s875u4b689q2jpcj4g4q9tla1">&nbsp;&nbsp;&nbsp;3.把远程仓库文件拉下来： git pull origin master</a>
+</h3>
+<h3 class="topic">
+<a name="3gcddf8k1ipo8b74io3sgohcfi">&nbsp;&nbsp;&nbsp;4.新建文件，后添加到本地仓库 git add .</a>
+</h3>
+<h3 class="topic">
+<a name="1k6tupchcdh58ebq3l71rps7t3">&nbsp;&nbsp;&nbsp;5.提交到本地仓库 git commit -m'a.md'</a>
+</h3>
+<h3 class="topic">
+<a name="2rhsp45tb7tkvgv5l60o5fkcee">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+</h3>
+<p class="topicImage">
+<img src="%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF_files/6kmpv2jmd9kovgbde58k0hahrd.png"></p>
+<h3 class="topic">
+<a name="7a1p5o4bp7fn1h2jam4ogrfj2g">&nbsp;&nbsp;&nbsp;6.git push origin master</a>
+</h3>
+<h3 class="topic">
+<a name="6as3ku2h173voracfg7auofbd1">&nbsp;&nbsp;4.本地仓库关联远程仓库（本地仓库与远程仓库文件不一致，有冲突情况下）</a>
+</h3>
+<h3 class="topic">
+<a name="11mda1ic5g1hqf0lpvkmqa82tr">&nbsp;&nbsp;&nbsp;虽然关联了远程仓库，但是pull和push都是出现警告和错误</a>
+</h3>
+<h3 class="topic">
+<a name="19gtcvtq11at95mdaocgg6tbf0">&nbsp;&nbsp;&nbsp;1.合并冲突，命令: git pull origin master --allow-unrelated-histories</a>
+</h3>
+<h3 class="topic">
+<a name="2l01gvhoav0t7rlnegakfbkhi1">&nbsp;&nbsp;&nbsp;&nbsp;跳转到另一个页面</a>
+</h3>
+<h3 class="topic">
+<a name="1jnnphog6fjb4esc283ur826vn">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+</h3>
+<p class="topicImage">
+<img src="%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF_files/5o69tcskmjur3hcksvd3cg77p4.png"></p>
+<h3 class="topic">
+<a name="0qtoienkeft7pmnfcmia5lavf9">&nbsp;&nbsp;&nbsp;&nbsp;1.按下ESC键</a>
+</h3>
+<h3 class="topic">
+<a name="21dd67t46d4gsi31pcs9akfm5l">&nbsp;&nbsp;&nbsp;&nbsp;2.输入 ：wq </a>
+</h3>
+<h3 class="topic">
+<a name="1a1cpt2k7i36upqdh801p87rko">&nbsp;&nbsp;&nbsp;&nbsp;3.按下回车 enter键</a>
+</h3>
+<h3 class="topic">
+<a name="2btfuk3qa9595sbkh1mps7q8bn">&nbsp;2.git 本地与远程连接（本地仓库与远程仓库文件不一致，有冲突情况下）</a>
+</h3>
+<h3 class="topic">
+<a name="6h1071a8df78vacb9j7ro4bu08">&nbsp;&nbsp;git init</a>
+</h3>
+<h3 class="topic">
+<a name="388i4elpb7r35cfe9bt33ah5ae">&nbsp;&nbsp;git add .</a>
+</h3>
+<h3 class="topic">
+<a name="6s51emchdqnpo5fn1b9fv7cqpq">&nbsp;&nbsp;git commit -m ""</a>
+</h3>
+<h3 class="topic">
+<a name="3k8op9iak0no3edsm5cqm2fvdd">&nbsp;&nbsp;git remote add origin https://github.com/hanyuntao/xxx.git</a>
+</h3>
+<h3 class="topic">
+<a name="35nt59liutp89dj3ipbv71kvup">&nbsp;&nbsp;git pull origin master --allow-unrelated-histories</a>
+</h3>
+<h3 class="topic">
+<a name="632aqm5n3efprjrcfgd8pf85m6">&nbsp;&nbsp;git branch --set-upstream-to=origin/master master</a>
+</h3>
+<h3 class="topic">
+<a name="3n76e388andi9ogi5b92qejc1m">&nbsp;&nbsp;git commit -m ""</a>
+</h3>
+<h3 class="topic">
+<a name="7a33950iqmbp9ko68s990jg89e">&nbsp;&nbsp;git push</a>
+</h3>
+<h2 class="topic">
+<a name="3if9cqb1atmmc8khnmkrvj7mpl">6.requestAnimationFrame</a>
+</h2>
+<h3 class="topic">
+<a name="2h01tj0bmjd419l6nf1rsv98gb">&nbsp;优点</a>
+</h3>
+<h3 class="topic">
+<a name="2d3deo9iqmjdm818oe9oaaipqb">&nbsp;&nbsp;1.requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率&#13;
+2.在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的 CPU、GPU 和内存使用量&#13;
+3.requestAnimationFrame 是由浏览器专门为动画提供的 API，在运行时浏览器会自动优化方法的调用，并且如果页面不是激活状态下的话，动画会自动暂停，有效节省了 CPU 开销</a>
+</h3>
+<h3 class="topic">
+<a name="2lkjgaiuqhsrg2q36kg4t4gloe">&nbsp;用法</a>
+</h3>
+<h3 class="topic">
+<a name="55r25sig31dm7tvlkk59lsvl71">&nbsp;&nbsp;ar deg = 0;&#13;
+var id;&#13;
+var div = document.getElementById("div");&#13;
+div.addEventListener('click', function () {&#13;
+    var self = this;&#13;
+    requestAnimationFrame(function change() {&#13;
+        self.style.transform = 'rotate(' + (deg++) + 'deg)';&#13;
+        id = requestAnimationFrame(change);&#13;
+    });&#13;
+});&#13;
+document.getElementById('stop').onclick = function () {&#13;
+    cancelAnimationFrame(id);&#13;
+};</a>
+</h3>
+<h3 class="topic">
+<a name="0r3n8m32coks2pi2h2cdk4ucqg">&nbsp;分步渲染</a>
+</h3>
+<h3 class="topic">
+<a name="3qtd057o4r6sqr4o3edrbbqsmu">&nbsp;&nbsp;var total = 100000;&#13;
+var size = 100;&#13;
+var count = total / size;&#13;
+var done = 0;&#13;
+var ul = document.getElementById('list');&#13;
+function addItems() {&#13;
+    var li = null;&#13;
+    var fg = document.createDocumentFragment();&#13;
+&#13;
+    for (var i = 0; i &lt; size; i++) {&#13;
+        li = document.createElement('li');&#13;
+        li.innerText = 'item ' + (done * size + i);&#13;
+        fg.appendChild(li);&#13;
+    }&#13;
+    ul.appendChild(fg);&#13;
+    done++;&#13;
+&#13;
+    if (done &lt; count) {&#13;
+        requestAnimationFrame(addItems);&#13;
+    }&#13;
+};&#13;
+requestAnimationFrame(addItems);</a>
+</h3>
+<h2 class="topic">
+<a name="65mktcbaho7v5a8f909nvb3f7h">7.localStorage用法</a>
+</h2>
+<h3 class="topic">
+<a name="6q2c881pnu73hpfcem0t1k6l9q">&nbsp;清空localStorage</a>
+</h3>
+<h3 class="topic">
+<a name="5fqrdf6cb71lov0a68knirb5o1">&nbsp;&nbsp;localStorage.clear()    // undefined    &#13;
+localStorage            // Storage {length: 0}</a>
+</h3>
+<h3 class="topic">
+<a name="14urnp1gbq1nkr37cogke73km2">&nbsp;存储数据</a>
+</h3>
+<h3 class="topic">
+<a name="1ugae3gjplrf8ssk6ns84mlm62">&nbsp;&nbsp;localStorage.setItem("name","caibin") //存储名字为name值为caibin的变量&#13;
+localStorage.name = "caibin"; // 等价于上面的命令&#13;
+localStorage // Storage {name: "caibin", length: 1}</a>
+</h3>
+<h3 class="topic">
+<a name="0q79lqdu82jbe4cf7fsp1asjuf">&nbsp;读取数据</a>
+</h3>
+<h3 class="topic">
+<a name="3ie6n1cdb90i7qsngfsrm8i33o">&nbsp;&nbsp;localStorage.getItem("name") //caibin,读取保存在localStorage对象里名为name的变量的值&#13;
+localStorage.name // "caibin"&#13;
+localStorage.valueOf() //读取存储在localStorage上的所有数据&#13;
+localStorage.key(0) // 读取第一条数据的变量名(键值)&#13;
+//遍历并输出localStorage里存储的名字和值&#13;
+for(var i=0; i&lt;localStorage.length;i++){&#13;
+    console.log('localStorage里存储的第'+i+'条数据的名字为：'+localStorage.key(i)+',值为：'+localStorage.getItem(localStorage.key(i)));&#13;
+}</a>
+</h3>
+<h3 class="topic">
+<a name="5erqg4l260nk2fr6hmbndegqr3">&nbsp;删除某个变量</a>
+</h3>
+<h3 class="topic">
+<a name="6kmdpek0m0i0m52jsco79hheg8">&nbsp;&nbsp;localStorage.removeItem("name"); //undefined&#13;
+localStorage // Storage {length: 0} 可以看到之前保存的name变量已经从localStorage里删除了</a>
+</h3>
+<h3 class="topic">
+<a name="40d72d7n888kss73drpkc00gmv">&nbsp;检查localStorage里是否保存某个变量</a>
+</h3>
+<h3 class="topic">
+<a name="2ut425sk0jldjiso1uc6pq3b1o">&nbsp;&nbsp;// 这些数据都是测试的，是在我当下环境里的，只是demo哦～&#13;
+localStorage.hasOwnProperty('name') // true&#13;
+localStorage.hasOwnProperty('sex')  // false</a>
+</h3>
+<h3 class="topic">
+<a name="6r8umdgdvocj503upkoms3jf4r">&nbsp;将数组转为本地字符串</a>
+</h3>
+<h3 class="topic">
+<a name="0vsntktstg7sslbifscb75jplh">&nbsp;&nbsp;var arr = ['aa','bb','cc']; // ["aa","bb","cc"]&#13;
+localStorage.arr = arr //["aa","bb","cc"]&#13;
+localStorage.arr.toLocaleString(); // "aa,bb,cc"</a>
+</h3>
+<h3 class="topic">
+<a name="1p57luj3nh0l6439h3a7msjl41">&nbsp;将JSON存储到localStorage里</a>
+</h3>
+<h3 class="topic">
+<a name="4s9ujsu8o1khtmrlq4r1k323f3">&nbsp;&nbsp;var students = {&#13;
+    xiaomin: {&#13;
+        name: "xiaoming",&#13;
+        grade: 1&#13;
+    },&#13;
+    teemo: {&#13;
+        name: "teemo",&#13;
+        grade: 3&#13;
+    }&#13;
+}&#13;
+students = JSON.stringify(students);  //将JSON转为字符串存到变量里&#13;
+console.log(students);&#13;
+localStorage.setItem("students",students);//将变量存到localStorage里&#13;
+&#13;
+var newStudents = localStorage.getItem("students");&#13;
+newStudents = JSON.parse(students); //转为JSON&#13;
+console.log(newStudents); // 打印出原先对象</a>
+</h3>
+<h2 class="topic">
+<a name="1klb821ahprmovv352qnhiuob8">8.fileReader</a>
+</h2>
+<h3 class="topic">
+<a name="6qpfk87hqf8l2abol01ev71908">&nbsp;FileReader 对象允许Web应用程序异步读取存储在用户计算机上的文件（或原始数据缓冲区）的内容，使用 File 或 Blob 对象指定要读取的文件或数据。</a>
+</h3>
+<h3 class="topic">
+<a name="4397uo3vhh32fu2am010fa4gut">&nbsp;1.检测浏览器对FileReader的支持</a>
+</h3>
+<h3 class="topic">
+<a name="460nkaim73d48f67kf95me3bft">&nbsp;&nbsp;if(window.FileReader) {  &#13;
+    var fr = new FileReader();  &#13;
+    // add your code here  &#13;
+}  &#13;
+else {  &#13;
+    alert("Not supported by your browser!");  &#13;
+}  </a>
+</h3>
+<h3 class="topic">
+<a name="32t8i7n0g97edhmorrlm2m3stq">&nbsp;2. 调用FileReader对象的方法</a>
+</h3>
+<h3 class="topic">
+<a name="211vecs8bdnjj568e2qi988mn5">&nbsp;&nbsp;</a>
+</h3>
+<p class="topicImage">
+<img src="%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF_files/02bmi6rg5bdimo030phr849d7h.png"></p>
+<h3 class="topic">
+<a name="5fuqpjht5l1kb38tvbbi07iegq">&nbsp;3. 处理事件</a>
+</h3>
+<h3 class="topic">
+<a name="1mmgvbnn5sqmptmsqukoijunlv">&nbsp;&nbsp;</a>
+</h3>
+<p class="topicImage">
+<img src="%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF_files/4lde2uouk0isut94ruluatjmh9.png"></p>
+<h3 class="topic">
+<a name="617pdsic51i6labh8t0le8hd1q">&nbsp;4.上传图片预览和带进度条上传</a>
+</h3>
+<h3 class="topic">
+<a name="76r47i3c88jkn59vcli8i87qr1">&nbsp;&nbsp;&lt;script type="text/javascript"&gt;  &#13;
+        function showPreview(source) {  &#13;
+            var file = source.files[0];  &#13;
+            if(window.FileReader) {  &#13;
+                var fr = new FileReader();  &#13;
+                fr.onloadend = function(e) {  &#13;
+                    document.getElementById("portrait").src = e.target.result;  &#13;
+                };  &#13;
+                fr.readAsDataURL(file);  &#13;
+            }  &#13;
+        }  &#13;
+    &lt;/script&gt;  &#13;
+  &#13;
+&lt;input type="file" name="file" onchange="showPreview(this)" /&gt;  &#13;
+                                &lt;img id="portrait" src="" width="70" height="75"&gt;  </a>
+</h3>
+<h3 class="topic">
+<a name="1dngjm477qomkdsvi8ttr8rptg">&nbsp;&nbsp;if(!/image\/\w+/.test(file.type)){  &#13;
+    alert("请确保文件为图像类型");  &#13;
+    return false;  &#13;
+} </a>
+</h3>
+<h2 class="topic">
+<a name="64m6c6041c2jjb5lt33ig1559d">9.进度条动画</a>
+</h2>
+<h3 class="topic">
+<a name="7deq1robp94set9is2qgn2joib">&nbsp;&lt;strong id="bar" style="width: 0%;"&gt;0%&lt;/strong&gt;</a>
+</h3>
+<h3 class="topic">
+<a name="4qnbd33idre6nnjgk2o3rcbnlr">&nbsp;function progress(params) {&#13;
+		$('#bar')[0].style.width = parseInt($('#bar')[0].style.width) + 1+ "%"; &#13;
+&#13;
+		$('#bar')[0].innerHTML = $('#bar')[0].style.width; &#13;
+		if($('#bar')[0].style.width == "100%"){ &#13;
+			window.clearInterval(bar);&#13;
+			$('.graph').hide();&#13;
+			$('.lg_form').show();&#13;
+		}&#13;
+}&#13;
+$(function(){&#13;
+	// 进度条&#13;
+	var bar=window.setInterval("progress()",50);&#13;
+}</a>
+</h3>
+<h2 class="topic">
+<a name="0b38fnpbj4ng1q2r97hkhdpvfc">10.强制横竖屏</a>
+</h2>
+<h3 class="topic">
+<a name="738f69jec5hcbi60pgkpha1acb">&nbsp;//强制横竖屏&#13;
+	var $content=$('#content'); &#13;
+	function changeOrientation($content) { &#13;
+				&#13;
+				var width = document.documentElement.clientWidth;&#13;
+				var height =  document.documentElement.clientHeight;&#13;
+				if(width &lt; height) {&#13;
+					$content.width(height);&#13;
+					$content.height(width);&#13;
+					$content.css('top',  (height - width) / 2 );&#13;
+					$content.css('left',  0 - (height - width) / 2 );&#13;
+					$content.css('transform', 'rotate(90deg)');&#13;
+					$content.css('transform-origin', '50% 50%');&#13;
+				}else{&#13;
+					$content.width(width);&#13;
+					$content.height(height);&#13;
+					$content.css('top',  0 );&#13;
+					$content.css('left',  0 );&#13;
+					$content.css('transform' , 'none');&#13;
+					$content.css('transform-origin' , '50% 50%');&#13;
+				} &#13;
+		&#13;
+		var evt = "onorientationchange" in window ? "orientationchange" : "resize";&#13;
+			&#13;
+			window.addEventListener(evt, function() {&#13;
+&#13;
+			setTimeout(function() {&#13;
+				var width = document.documentElement.clientWidth;&#13;
+				var height =  document.documentElement.clientHeight;&#13;
+&#13;
+				if( width &gt; height ){&#13;
+					$content.width(width);&#13;
+					$content.height(height);&#13;
+					$content.css('top',  0 );&#13;
+					$content.css('left',  0 );&#13;
+					$content.css('transform' , 'none');&#13;
+					$content.css('transform-origin' , '50% 50%');&#13;
+				}&#13;
+				else {&#13;
+					$content.width(height);&#13;
+					$content.height(width);&#13;
+					$content.css('top',  (height-width)/2 );&#13;
+					$content.css('left',  0-(height-width)/2 );&#13;
+					$content.css('transform' , 'rotate(90deg)');&#13;
+					$content.css('transform-origin' , '50% 50%');&#13;
+				}&#13;
+			}, 300);	&#13;
+		}, false);&#13;
+	}&#13;
+&#13;
+	function getOrientation() {&#13;
+		var orientation = 'landscape';&#13;
+		var width = document.documentElement.clientWidth;&#13;
+		var height =  document.documentElement.clientHeight;&#13;
+		if(width &lt; height) {// 竖屏&#13;
+			orientation = 'landscape';&#13;
+		}&#13;
+		else {// 横屏&#13;
+			orientation = 'portrait';&#13;
+		}&#13;
+		return orientation;&#13;
+	}&#13;
+changeOrientation($content);</a>
+</h3>
+<h2 class="topic">
+<a name="4se41mjo8lr87usml142kqoh2i">11.clipboard用法</a>
+</h2>
+<h3 class="topic">
+<a name="2ir6g7aprfq29gokrcqfl0gmjo">&nbsp;&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"&gt;&lt;/script&gt;</a>
+</h3>
+<h3 class="topic">
+<a name="73qfkgk0iccpcq3sfilp6v869i">&nbsp;    &lt;input id="foo" value="https://github.com/zenorocha/clipboard.js.git"&gt;&#13;
+    &lt;button class="btn" id="test"   data-clipboard-action="copy" data-clipboard-target="#foo"&gt;&#13;
+        Copy to clipboard&#13;
+    &lt;/button&gt; </a>
+</h3>
+<h3 class="topic">
+<a name="3dc6lfvm6stesn3oo7k378iiq3">&nbsp;$(function (params) {&#13;
+        ClipboardJS.isSupported();&#13;
+        var clipboard = new ClipboardJS('.btn');&#13;
+        clipboard.on('success', function(e) {&#13;
+            console.info('Action:', e.action);&#13;
+            console.info('Text:', e.text);&#13;
+            console.info('Trigger:', e.trigger);&#13;
+&#13;
+            e.clearSelection();&#13;
+        });&#13;
+        clipboard.on('error', function(e) {&#13;
+            console.error('Action:', e.action);&#13;
+            console.error('Trigger:', e.trigger);&#13;
+        });&#13;
+    })</a>
+</h3>
+<h3 class="topic">
+<a name="0uu0ai3msd3kehjif53jrbu323">&nbsp;var clipboard=  new Clipboard('.copy-herf', {&#13;
+            text: function() {&#13;
+                return $('#money_iframe').attr('src');&#13;
+            }&#13;
+        });&#13;
+        clipboard.on('success', function(e) {&#13;
+            alert("复制成功");&#13;
+&#13;
+            e.clearSelection();&#13;
+&#13;
+        });&#13;
+        clipboard.on('error', function(e) {&#13;
+            alert("复制失败");&#13;
+            e.clearSelection();&#13;
+&#13;
+        })</a>
+</h3>
+<h2 class="topic">
+<a name="6e2mvvbtpn61k54iobbcq7ho4h">12.Object.defineProperty用法</a>
+</h2>
+<h3 class="topic">
+<a name="02kg4cg7eqsabuj4q49m72s81n">&nbsp;var obj = {}; // Creates a new object 创造对象&#13;
+Object.defineProperty(obj, "hello", {&#13;
+         get: function () {return sth},&#13;
+         set: function (val) {/* do sth */}&#13;
+})</a>
+</h3>
+<h3 class="topic">
+<a name="7ceb0g598kmshfsji9kg0ngd05">&nbsp;	 var obj = {};&#13;
+    Object.defineProperty(obj, "test", {&#13;
+        set: function (newVal){&#13;
+            document.getElementById("test2").innerHTML = newVal;&#13;
+        }&#13;
+    })&#13;
+&#13;
+    document.addEventListener('keyup', function(e) {&#13;
+        obj.test = e.target.value;    // input输入的值作为obj的&ldquo;动态属性值&rdquo;，赋值给p&#13;
+    })&#13;
+</a>
+</h3>
+<h2 class="topic">
+<a name="178js6153fjd2mbbutgm0gtfo3">13.-webkit-overflow-scrolling 属性</a>
+</h2>
+<h3 class="topic">
+<a name="2f1mntf5gj4k2f0p510gq6tf2j">&nbsp;auto</a>
+</h3>
+<h3 class="topic">
+<a name="4d09js5hcaktgg1rh1nb63ejsg">&nbsp;&nbsp;使用普通滚动, 当手指从触摸屏上移开，滚动会立即停止</a>
+</h3>
+<h3 class="topic">
+<a name="5b9c6dmvkhi28q2ueu7ljvtucl">&nbsp;touch</a>
+</h3>
+<h3 class="topic">
+<a name="4jtcfpt740tom1to4brqcicak2">&nbsp;&nbsp;使用具有回弹效果的滚动, 当手指从触摸屏上移开，内容会继续保持一段时间的滚动效果。继续滚动的速度和持续的时间和滚动手势的强烈程度成正比。同时也会创建一个新的堆栈上下文。&#13;
+-webkit-overflow-scrolling是真的创建了带有硬件加速的系统级控件，所以效率很高。但是这相对是耗更多内存的，最好在产生了非常大面积的overflow时才应用</a>
+</h3>
+<h2 class="topic">
+<a name="1h2fmbp312pbqn0461a1i9dj9h">14.h5同层播放防止抖动</a>
+</h2>
+<h3 class="topic">
+<a name="1ie9t38693aufbkv542g4s4b7b">&nbsp;&lt;video id="video" class="video" controls="controls" playsinline x5-video-player-type="h5" x5-video-player-fullscreen="true"&gt;&#13;
+    &lt;source src="video.mp4" /&gt;&#13;
+&lt;/video&gt;</a>
+</h3>
+<h2 class="topic">
+<a name="02h5c0je6p24cl6ti9oj7jnn1e">15.移动端键盘输入框遮挡</a>
+</h2>
+<h3 class="topic">
+<a name="545292nn7a8hnaejded8idohup">&nbsp;容器不能设置position：fixed</a>
+</h3>
+<h3 class="topic">
+<a name="4nqedlkpqa5pedppg1o8rk7ir8">&nbsp;显示输入框</a>
+</h3>
+<h3 class="topic">
+<a name="26hmho0lfne8q10omtd71m72jn">&nbsp;&nbsp;$('input[type="text"],textarea').on('click', function () {&#13;
+  var target = this;&#13;
+  setTimeout(function(){&#13;
+        target.scrollIntoViewIfNeeded();&#13;
+        console.log('scrollIntoViewIfNeeded');&#13;
+      },400);&#13;
+});</a>
+</h3>
+<h2 class="topic">
+<a name="1q8ehu71v2279aks0i6cng7vfq">16.iconfont多色图标使用</a>
+</h2>
+<h3 class="topic">
+<a name="115gpglfdjr3oef61b8qlp2imh">&nbsp;symbol引用</a>
+</h3>
+<h3 class="topic">
+<a name="34ch687eld4m3d1dm3i0oprebu">&nbsp;&nbsp;引入项目下面生成的symbol代码</a>
+</h3>
+<p class="labelsAndMarkers">
+<img class="marker" src="%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF_files/images/priority_1.png"></p>
+<h3 class="topic">
+<a name="1tl2i86qgef5b77ip497q3j1l0">&nbsp;&nbsp;&nbsp;//at.alicdn.com/t/font_665293_sv7oq4fw64cuwhfr.js</a>
+</h3>
+<h3 class="topic">
+<a name="1ig9105lcu0h6daml426jqu9fl">&nbsp;&nbsp;加入通用css代码</a>
+</h3>
+<p class="labelsAndMarkers">
+<img class="marker" src="%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF_files/images/priority_2.png"></p>
+<h3 class="topic">
+<a name="3lnmd95d1v5frf2flfp8oel53a">&nbsp;&nbsp;&nbsp;&lt;style type="text/css"&gt;&#13;
+.icon {&#13;
+width: 1em; height: 1em;&#13;
+vertical-align: -0.15em;&#13;
+fill: currentColor;&#13;
+overflow: hidden;&#13;
+}&#13;
+&lt;/style&gt;</a>
+</h3>
+<h3 class="topic">
+<a name="4d38kf6hhbih5g29sh16ds2k1o">&nbsp;&nbsp;挑选相应图标并获取类名</a>
+</h3>
+<p class="labelsAndMarkers">
+<img class="marker" src="%E4%BA%94%E6%9C%88%E7%A7%AF%E7%B4%AF_files/images/priority_3.png"></p>
+<h3 class="topic">
+<a name="1l5arhip00a27vmhkuft8kqtk5">&nbsp;&nbsp;&nbsp;&lt;svg class="icon" aria-hidden="true"&gt;&#13;
+&lt;use xlink:href="#icon-类名"&gt;&lt;/use&gt;&#13;
+&lt;/svg&gt;</a>
+</h3>
+<h2 class="topic">
+<a name="1edj0tfrp4ak5aqt5tvq418beo">17.图片懒加载实现</a>
+</h2>
+<h3 class="topic">
+<a name="0utdlr8vd2tn24188avnf5l4vs">&nbsp;&lt;script src="lazysizes.min.js" async=""&gt;&lt;/script&gt;</a>
+</h3>
+<h3 class="topic">
+<a name="7mcu4kn1m4pj66tutkm16afgd5">&nbsp;&lt;img data-src="image.jpg" class="lazyload" /&gt;</a>
+</h3>
+<h3 class="topic">
+<a name="4s3vn2oe8h6ubhq0jkhoj3lv45">&nbsp;&lt;img&#13;
+    data-sizes="auto"&#13;
+    data-src="image2.jpg"&#13;
+    data-srcset="image1.jpg 300w,&#13;
+    image2.jpg 600w,&#13;
+    image3.jpg 900w" class="lazyload" /&gt;</a>
+</h3>
+<h2 class="topic">
+<a name="0lmcv6vml095nhdupckjnn3jrf">18.try..catch...调试</a>
+</h2>
+<h3 class="topic">
+<a name="3tu4gult804mppvdqsd7a95rek">&nbsp;try{}&#13;
+catch(e){concole.log(e)}</a>
+</h3>
+<h2 class="topic">
+<a name="6lj5h18t7vhgvkpm5ae4p8ccai">19.apicloud打包</a>
+</h2>
+<h3 class="topic">
+<a name="5ojvs8eq0fb4fvar2n2glbfba5">&nbsp;1.下载APICloud Studio ，创建应用</a>
+</h3>
+<h3 class="topic">
+<a name="2u5gpv0k1oud6lm7qscuuoqe1h">&nbsp;2.同步本地应用到云端资源库</a>
+</h3>
+<h3 class="topic">
+<a name="07931rmqff7ffgsj03u6bvmqvd">&nbsp;&nbsp;在项目根目录上右键，选择 git --&gt; Git add + commit,输入一段更改备注后,ctrl/cmd + S保存,即可 将代码提交到本地 GIT 仓库.</a>
+</h3>
+<h3 class="topic">
+<a name="7mv96lpksmf5qmusf37upf3i4v">&nbsp;3.进行云编译</a>
+</h3>
+<h2 class="topic">
+<a name="0c59ia7n5p97pvdrqgt8sn5rab">20.隐藏滚动</a>
+</h2>
+<h3 class="topic">
+<a name="1q78o3e66eamag10j9dr0u9bdg">&nbsp;/* 隐藏滚动条 */&#13;
+    ::-webkit-scrollbar {&#13;
+        display: none;&#13;
+    }</a>
+</h3>
+<h2 class="topic">
+<a name="6bov6kd12l50f7k4lnijc3a5eh">21.iframe宽度撑大，或自动变大</a>
+</h2>
+<h3 class="topic">
+<a name="2pdr3orm8t0i4d7phuhecf7g2t">&nbsp;通过判断ios，使用js获取屏幕宽赋值给容器</a>
+</h3>
+</body>
+</html>
