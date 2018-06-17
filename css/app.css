@@ -200,9 +200,13 @@ i,em{font-style: normal;}
   -webkit-justify-content: flex-start;
 }
 /* flex 容器（设置为flex）内子元素向两边顶齐平分 */
-.flex-jcsb {
+.flex-between {
   justify-content: space-between;
   -webkit-justify-content: space-between;
+}
+.justify-content-center{
+	justify-content: center;
+	-webkit-justify-content: center;
 }
 .align-self{
   align-self: center;
