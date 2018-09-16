@@ -1,0 +1,6 @@
+1. vscode中检测代码中的空白行并去除
+
+按下ctrl+h键进行正则匹配：^\s*(?=\r?$)\n
+
+2. vscode格式化代码 Prettier
+  CMD + Shift + P -> Format Document
