@@ -1,0 +1,40 @@
+css
+.tips{
+display: flex;
+padding: 0 30rpx;
+font-size: 28rpx;
+color: white;
+background: #f92d36;
+}
+
+.tips-txt-content{
+margin:0 15rpx;
+flex: 1;
+overflow: hidden;
+white-space: nowrap;
+}
+
+@keyframes marquee {
+
+from {
+transform: translateX(650rpx)
+}
+
+to {
+transform: translateX(-100%)
+}
+}
+
+.dgdui-tips_marquee {
+animation: marquee 3s linear infinite; 
+}
+
+html
+<view>
+<view class='tips-txt-content'>
+
+<view class='tips-txt dgdui-tips_marquee'>您未签订自助服务协议，签订后可在线办理提取业务</view>
+</view>
+
+<dgd-icon class="dgdui-tips__ft" type="ft" size="26" color="white"/>
+</view>
