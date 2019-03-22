@@ -1,0 +1,2 @@
+开启多个git进程报错
+rm -f .git/index.lock
