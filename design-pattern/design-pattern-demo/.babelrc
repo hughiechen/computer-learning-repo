@@ -1,4 +1,4 @@
 {
-	"presets": ["@babel/preset-env"],
-	"plugins":[]
+	"presets": ["es2015", "latest"],
+	"plugins":["transform-decorators-legacy"]
 }
