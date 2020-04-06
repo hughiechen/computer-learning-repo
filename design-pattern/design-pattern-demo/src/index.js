@@ -49,7 +49,6 @@
 //     return new jQuery(selector)
 // }
 
-
 /***************************************************************/
 
 // //类 车
@@ -91,39 +90,132 @@
 // trip.end()
 /***************************************************************/
 
+// class LoginForm {
+//     constructor(){
+//         this.state='hide'
+//     }
+//     show(){
+//         if(this.state==='show')
+//             console.log('had shown');
 
-class LoginForm {
-    constructor(){
-        this.state='hide'
+//             return;
+//         this.state='show'
+//         console.log('showd');
+
+//     }
+//     hide(){
+//         if(this.state==='hide')
+//             console.log('had hidden');
+//             return;
+//         this.state='hide'
+//         console.log('hided');
+
+//     }
+// }
+// LoginForm.getInstance=(()=>{
+//     let instance;
+//     return ()=>{
+//         if(!instance){
+//             instance=new LoginForm()
+//         }
+//         return instance
+//     }
+// })()
+// let LoginForm1=LoginForm.getInstance()
+// LoginForm1.show()
+// let LoginForm2=LoginForm.getInstance()
+// LoginForm2.show()
+
+// proxy模式
+// let star = {
+//   age: "111",
+//   name: "hehe",
+//   phone: "111333",
+//   customPrice: 23
+// };
+
+// let agent = new Proxy(star, {
+//   get(target, key, val) {
+//     if (key === "phone") {
+//       return "agent 134";
+//     }
+//     return target[key];
+//   },
+//   set(target, key, value) {
+//     if (key === "customPrice") {
+//       if (value < 100) {
+//         throw new Error("价格低");
+//       } else {
+//         target[key] = value;
+//         return true;
+//       }
+//     }
+//   }
+// });
+// console.log(agent.phone);
+// console.log(agent.name);
+// console.log(agent.customPrice);
+// agent.customPrice = 20;
+
+// 冒泡正序
+// function bubbleSort1(arr) {
+//   let old = new Date().getTime()
+
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (arr[i] > arr[j]) {
+//         let temp = arr[i]
+//         arr[i] = arr[j]
+//         arr[j] = temp
+//       }
+
+//     }
+//   }
+
+//   let cur = new Date().getTime()
+//   console.log(cur - old)
+//   return arr
+// }
+// let arr = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+// bubbleSort1(arr)
+// 冒泡倒叙
+// function bubbleSort2(arr) {
+//   let old = new Date().getTime()
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = arr.length - 2; j >= i; j--) {
+//       if (arr[j] > arr[j + 1]) {
+//         let temp = arr[j]
+//         arr[j] = arr[j + 1]
+//         arr[j + 1] = temp
+//       }
+//     }
+//   }
+//   let cur = new Date().getTime()
+//   console.log(cur - old)
+//   return arr
+// }
+// let arr = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+// bubbleSort2(arr)
+
+// 冒泡排序优化
+function bubbleSort3(arr) {
+  let flag = true
+  for (let i = 0; i < arr.length; i++) {
+    flag = false
+    for (let j = arr.length - 2; j >= i; j--) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j]
+        arr[j] = arr[j + 1]
+        arr[j + 1] = temp
+        flag = true
+      }
+
     }
-    show(){
-        if(this.state==='show')
-            console.log('had shown');
-
-            return;
-        this.state='show'
-        console.log('showd');
-
-    }
-    hide(){
-        if(this.state==='hide')
-            console.log('had hidden');
-            return;
-        this.state='hide'
-        console.log('hided');
-
-    }
+    if (!flag) break;
+  }
+  return arr
 }
-LoginForm.getInstance=(()=>{
-    let instance;
-    return ()=>{
-        if(!instance){
-            instance=new LoginForm()
-        }   
-        return instance
-    }
-})()
-let LoginForm1=LoginForm.getInstance()
-LoginForm1.show()
-let LoginForm2=LoginForm.getInstance()
-LoginForm2.show()
+let arr = [2, 1, 7, 6, 5, 4, 3, 8, 9]
+
+bubbleSort3(arr)
