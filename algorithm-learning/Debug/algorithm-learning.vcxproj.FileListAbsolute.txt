@@ -1,0 +1,2 @@
+E:\life\computer-learning-repo\algorithm-learning\Debug\algorithm-learning.exe
+E:\life\computer-learning-repo\algorithm-learning\Debug\algorithm-learning.pdb
