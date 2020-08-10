@@ -1,0 +1,2 @@
+E:\life\computer-learning-repo\c++_learning\Debug\c++_learning.exe
+E:\life\computer-learning-repo\c++_learning\Debug\c++_learning.pdb
