@@ -1,42 +1,56 @@
+/*
+ * @Author: Hughie
+ * @Date: 2020-11-14 18:49:09
+ * @LastEditors: Hughie
+ * @LastEditTime: 2020-11-29 11:03:42
+ * @Description: 
+ */
 #include "stdio.h";
 #include "stdlib.h";
 #include "io.h";
 #include "math.h";
 #include "time.h";
-#define MAXSIZE 20 /*´æ´¢¿Õ¼ä³õÊ¼»¯·ÖÅäÁ¿*/
+#define MAXSIZE 20 /*å­˜å‚¨ç©ºé—´åˆå§‹åŒ–åˆ†é…é‡*/
 #define OK 1;
 #define ERROR 0;
 #define TRUE 1;
 #define FALSE 0;
 
-typedef int Status;/*Status ÊÇº¯ÊıµÄÀàĞÍ£¬ÆäÖµÊÇº¯Êı½á¹û×´Ì¬*/
-typedef int ElemType;/*ElemTypeÀàĞÍ¸ù¾İÊµ¼ÊÇé¿ö¶ø¶¨*/
+typedef int Status;		/*Status æ˜¯å‡½æ•°çš„ç±»å‹ï¼Œå…¶å€¼æ˜¯å‡½æ•°ç»“æœçŠ¶æ€*/
+typedef int ElemType; /*ElemTypeç±»å‹æ ¹æ®å®é™…æƒ…å†µè€Œå®š*/
 
 typedef struct
 {
-	ElemType data[MAXSIZE];/*Êı×é´æ´¢Êı¾İÔªËØ£¬×î´óÖµÎªMAXSIZE*/
-	int length; /*ÏßĞÔ±íµ±Ç°³¤¶È*/
-}SqList;
+	ElemType data[MAXSIZE]; /*æ•°ç»„å­˜å‚¨æ•°æ®å…ƒç´ ï¼Œæœ€å¤§å€¼ä¸ºMAXSIZE*/
+	int length;							/*çº¿æ€§è¡¨å½“å‰é•¿åº¦*/
+} SqList;
 
-/*»ñÈ¡ÔªËØ*/
-/*³õÊ¼Ìõ¼ş£ºË³ĞòÏßĞÔ±íLÒÑ´æÔÚ£¬1<=i<=ListLength(L)*/
-/*²Ù×÷½á¹û£ºÓÃe·µ»ØLÖĞµÚi¸öÊı¾İÔªËØµÄÖµ*/
-Status GetElem(SqList L, int i, ElemType e) {
-	if (L.length == 0 || i<1 || i>L.length)return ERROR;
+/*è·å–å…ƒç´ */
+/*åˆå§‹æ¡ä»¶ï¼šé¡ºåºçº¿æ€§è¡¨Lå·²å­˜åœ¨ï¼Œ1<=i<=ListLength(L)*/
+/*æ“ä½œç»“æœï¼šç”¨eè¿”å›Lä¸­ç¬¬iä¸ªæ•°æ®å…ƒç´ çš„å€¼*/
+Status GetElem(SqList L, int i, ElemType e)
+{
+	if (L.length == 0 || i < 1 || i > L.length)
+		return ERROR;
 	e = L.data[i - 1];
 	return OK;
 }
 
-/*²åÈëÔªËØ*/
-Status ListInsert(SqList *L, int i, ElemType e) {
+/*æ’å…¥å…ƒç´ */
+Status ListInsert(SqList *L, int i, ElemType e)
+{
 	int k;
-	/*Ë³ĞòÏßĞÔ±íÒÑÂú£¬·µ»Ø´íÎó*/
-	if (L->length == MAXSIZE) return ERROR;
+	/*é¡ºåºçº¿æ€§è¡¨å·²æ»¡ï¼Œè¿”å›é”™è¯¯*/
+	if (L->length == MAXSIZE)
+		return ERROR;
 
-	if (i<1 || i>L->length + 1) return ERROR;
+	if (i < 1 || i > L->length + 1)
+		return ERROR;
 
-	if (i <= L->length) {
-		for (k = L->length - 1; k >=i-1; k--) {
+	if (i <= L->length)
+	{
+		for (k = L->length - 1; k >= i - 1; k--)
+		{
 			L->data[k + 1] = L->data[k];
 		}
 	}
@@ -45,20 +59,22 @@ Status ListInsert(SqList *L, int i, ElemType e) {
 	return OK;
 }
 
-/*É¾³ıÔªËØ*/
-Status ListDelete(SqList* L, int i, ElemType *e) {
+/*åˆ é™¤å…ƒç´ */
+Status ListDelete(SqList *L, int i, ElemType *e)
+{
 	int k;
-	if (L->length == 0) return ERROR;
-	if (i < 1 || L->length) return ERROR;
+	if (L->length == 0)
+		return ERROR;
+	if (i < 1 || L->length)
+		return ERROR;
 	*e = L->data[i - 1];
-	if (i < L->length) {
-		for (k = i; k < L->length; k++) {
+	if (i < L->length)
+	{
+		for (k = i; k < L->length; k++)
+		{
 			L->data[k - 1] = L->data[k];
 		}
 	}
 	L->length--;
 	return OK;
 }
-
-
-
